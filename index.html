@@ -14,8 +14,47 @@
         <form id="form">
             <div class="campo">
                 <label for="preco">Preço (R$)</label>
+                <input id="preco" type="number" step="0.01" min="0" value="0" required />
             </div>
+
+            <div class="campo">
+                <label for="desconto">Desconto (%)</label>
+                <input id="desconto" type="number" step="0.01" min="0" value="0" required />
+            </div>
+
+            <div class="campo">
+                <label for="taxa">Taxa de Juros Simples mensal (%)</label>
+                <input id="taxa" type="number" step="0.01" min="0" value="0" required />
+            </div>
+
+            <div class="campo">
+                <label for="parcelas">Número de parcelas (meses)</label>
+                <input id="parcelas" type="number" min="1" value="1" required />
+            </div>
+            <button type="submit">Calcular</button>
+            <p id="erro" class="erro" aria-live="polite"></p>
         </form>
+
+        <section class="resultados" id="resultados" hidden>
+            <h2>Resultados</h2>
+            <u1>
+                <li><strong>Preço com Desconto:</strong> <span id="precoComDesconto">-</span></li>
+                <li><strong>Valor da Parcela:</strong> <span id="valorParcela">-</span></li>
+                <li><strong>Total a Pagar:</strong> <span id="totalPagar">-</span></li>
+                <li><strong>Economia com Desconto:</strong> <span id="economia">-</span></li>
+            </u1>
+        </section>
+
+        <section id="tabelaSecao" hidden>
+            <h2>Tabela de Parcelas (Juros Simples)</h2>
+            <table id="tabela">
+                <thead>
+                    <tr>
+                        <th>Mês</th>
+                        <th>Parcela (R$)</th>
+                        <th>Juros do mês</th>
+                        <th>Amortização</th>
+                        <th>Principal restante (R$)</th>
     </main>
 </body>
 </html>
